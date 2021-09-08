@@ -424,17 +424,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1083185153}
     - target: {fileID: 4413924830877595432, guid: 87bf43772ff3e09418085abae9a3f8f3, type: 3}
-      propertyPath: manager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4413924830877595432, guid: 87bf43772ff3e09418085abae9a3f8f3, type: 3}
       propertyPath: enemyTower
       value: 
       objectReference: {fileID: 543450651762089848}
-    - target: {fileID: 4413924830877595432, guid: 87bf43772ff3e09418085abae9a3f8f3, type: 3}
-      propertyPath: enemy.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4413924830877595432, guid: 87bf43772ff3e09418085abae9a3f8f3, type: 3}
       propertyPath: enemy.Array.data[0]
       value: 
@@ -443,14 +435,6 @@ PrefabInstance:
       propertyPath: enemy.Array.data[1]
       value: 
       objectReference: {fileID: 800247027}
-    - target: {fileID: 4413924830877595432, guid: 87bf43772ff3e09418085abae9a3f8f3, type: 3}
-      propertyPath: enemy.Array.data[2]
-      value: 
-      objectReference: {fileID: 800247027}
-    - target: {fileID: 4413924830877595433, guid: 87bf43772ff3e09418085abae9a3f8f3, type: 3}
-      propertyPath: m_Speed
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6214490965059368558, guid: 87bf43772ff3e09418085abae9a3f8f3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2759,21 +2743,21 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.7758325
-        value: 0.24819228
-        inSlope: 0.2431708
-        outSlope: 0.2431708
+        time: 0.6435388
+        value: 0.22457168
+        inSlope: 0.30018556
+        outSlope: 0.30018556
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.38316905
+        inWeight: 0.28208196
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.53333336, g: 0.8941177, b: 1, a: 0.7921569}
-      key1: {r: 0.53333336, g: 0.8941177, b: 1, a: 1}
+      key0: {r: 1, g: 0.8980393, b: 0.31764707, a: 0.78431374}
+      key1: {r: 1, g: 0.8980393, b: 0.31764707, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2781,14 +2765,14 @@ LineRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
+      ctime1: 65150
       ctime2: 0
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 386
+      atime0: 0
       atime1: 65535
       atime2: 0
       atime3: 0

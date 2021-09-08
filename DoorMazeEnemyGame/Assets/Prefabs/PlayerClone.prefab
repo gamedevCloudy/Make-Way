@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbfcef2f859ed9429faffef188c4867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 5
+  counter: 2
   clone: {fileID: 3787043899699263163}
 --- !u!1 &3984033181186889184
 GameObject:

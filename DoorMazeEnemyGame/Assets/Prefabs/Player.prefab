@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbfcef2f859ed9429faffef188c4867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 5
+  counter: 2
   clone: {fileID: 3787043899699263163, guid: f06b3825c0f5cb9459cce97311b93e1d, type: 3}
 --- !u!114 &4413924830877595432
 MonoBehaviour:
@@ -691,7 +691,9 @@ MonoBehaviour:
   enemyTower: {fileID: 0}
   enemy:
   - {fileID: 0}
+  - {fileID: 0}
   win: {fileID: 0}
+  enemyContainer: {fileID: 0}
 --- !u!195 &4413924830877595433
 NavMeshAgent:
   m_ObjectHideFlags: 0
