@@ -10,6 +10,7 @@ TagManager:
   - OutOfBounds
   - MultiplierField
   - Multiplier2x
+  - Enemy
   layers:
   - Default
   - TransparentFX

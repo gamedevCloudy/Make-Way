@@ -460,10 +460,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807dcc23b03568f4babd43518f31bf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTower: {fileID: 0}
-  enemy: []
-  win: {fileID: 0}
   enemyContainer: {fileID: 0}
+  enemyTower: {fileID: 0}
+  win: {fileID: 0}
+  health: 0
+  healthMax: 100
+  blueBlood: {fileID: 1899563061670897377, guid: 5aac34d371a64914fbd508986d3701d2, type: 3}
 --- !u!114 &8730836514550769240
 MonoBehaviour:
   m_ObjectHideFlags: 0

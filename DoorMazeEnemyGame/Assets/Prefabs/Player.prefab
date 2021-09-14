@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 4413924830877595433}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,12 +688,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807dcc23b03568f4babd43518f31bf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTower: {fileID: 0}
-  enemy:
-  - {fileID: 0}
-  - {fileID: 0}
-  win: {fileID: 0}
   enemyContainer: {fileID: 0}
+  enemyTower: {fileID: 0}
+  win: {fileID: 0}
+  health: 0
+  healthMax: 100
+  blueBlood: {fileID: 1899563061670897377, guid: 5aac34d371a64914fbd508986d3701d2, type: 3}
 --- !u!195 &4413924830877595433
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -5,18 +5,23 @@ using UnityEngine.AI;
 
 public class aaPathMover : MonoBehaviour
 {
+    //Locomotion
     private NavMeshAgent navMeshAgent;
     private Queue<Vector3> pathPoints = new Queue<Vector3>();
     private Rigidbody rb;
     private Animator anim;
 
+    [Header("Targets")]
+    [SerializeField] private GameObject enemyContainer;
     [SerializeField] private Transform enemyTower;
-    [SerializeField] private GameObject[] enemy;
     [SerializeField] private Transform win;
     
+    [Header("PlayerHealth")]
+    [SerializeField] private int health;
+    [SerializeField] private int healthMax = 100;
+    [SerializeField] private ParticleSystem blueBlood; 
 
-    [SerializeField] private GameObject enemyContainer; 
-
+    //StateMachine
     private enum State
     {
         FollowPath,
@@ -33,11 +38,15 @@ public class aaPathMover : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         FindObjectOfType<aaPathCreator>().OnNewPathCreated += SetPoints;
-        anim = GetComponent<Animator>();
+        
         state = State.FollowPath;
+        anim = GetComponent<Animator>();
+
         enemyTower = GameObject.Find("EnemyTower").transform;
         enemyContainer = GameObject.Find("EnemyContainer");
-        win = GameObject.Find("FinalDestination").transform; 
+        win = GameObject.Find("FinalDestination").transform;
+
+        health = healthMax; 
     }
 
 
@@ -94,12 +103,27 @@ public class aaPathMover : MonoBehaviour
 
 
         //Animation zone
-        if(navMeshAgent.velocity.magnitude > 1f)
+        if(navMeshAgent.velocity.magnitude > 1.5f)
         {
             anim.SetTrigger("Running");
         }
 
+        if( health <= 0)
+        {
+            Instantiate(blueBlood, transform.position, Quaternion.identity);
+            Invoke("PlayerDead", 1.5f); 
+        }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.CompareTag("Enemy"))
+        {
+            health -= 7;
+            Debug.Log("Current Health: " + health); 
+        }
+    }
+
     private void UpdatePathing()
     {
         if (ShouldSetDestination())
@@ -116,9 +140,6 @@ public class aaPathMover : MonoBehaviour
         return false;
     }
 
-
-   
-
     private void FindEnemies()
     {
         if(enemyContainer.transform.childCount > 0)
@@ -132,7 +153,6 @@ public class aaPathMover : MonoBehaviour
         else FindTowerTarget(); 
     }
 
-
     private void FindTowerTarget()
     {
         float targetRange = 3f;
@@ -143,11 +163,8 @@ public class aaPathMover : MonoBehaviour
                 state = State.AttackTower;
             }
         }
-        
-        if (enemyTower == null) state = State.RunForWin; 
+        else state = State.RunForWin; 
     }
-
-   
 
     private void DealTowerDamage()
     {
@@ -157,5 +174,11 @@ public class aaPathMover : MonoBehaviour
             anim.SetTrigger("Attack");
             tower.DealDamage(1);
         }
+    }
+
+    private void PlayerDead()
+    {
+
+        Destroy(gameObject); 
     }
 }
